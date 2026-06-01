@@ -28,6 +28,20 @@ namespace Playfair
         {
             InitMatrixGrid(tlpMatrix5x5, 5);
             InitMatrixGrid(tlpMatrix6x6, 6);
+
+            // --- KHÓA CÁC NÚT KHI MỚI BẮT ĐẦU ---
+            // Tab 5x5
+            btnCal5x5.Enabled = false;
+            btnResult5.Enabled = false;
+
+            // Tab 6x6
+            btnCal6x6.Enabled = false;
+            btnResult6.Enabled = false;
+
+            // Đảm bảo ComboBox chưa chọn gì cả (để trống hoặc hiển thị mặc định tùy bạn thiết kế)
+            cbOption5x5.SelectedIndex = -1;
+            cbOption6x6.SelectedIndex = -1;
+
         }
 
         private void InitMatrixGrid(TableLayoutPanel tlp, int size)
@@ -299,7 +313,7 @@ namespace Playfair
             {
                 // Kiểm tra nếu người dùng bấm Hủy
                 if (state.RequestStop) break;
-                
+
                 var pos1 = FindPos(matrix, pair[0], size);
                 var pos2 = FindPos(matrix, pair[1], size);
                 var res = PlayfairLogic(pos1, pos2, size, isEncrypt);
@@ -348,6 +362,8 @@ namespace Playfair
             btnControl.Enabled = false;
             btnStop.Enabled = false;
             btnCal.Enabled = true;
+            if (size == 5) btnResult5.Enabled = true;
+            else if (size == 6) btnResult6.Enabled = true;
         }
 
         private async void btnCal5x5_Click(object sender, EventArgs e)
@@ -362,31 +378,74 @@ namespace Playfair
 
         private void tbKey5x5_TextChanged(object sender, EventArgs e)
         {
-            int cursorPosition = tbKey5x5.SelectionStart; // Lưu vị trí con trỏ
-            string originalText = tbKey5x5.Text;
+            //int cursorPosition = tbKey5x5.SelectionStart; // Lưu vị trí con trỏ
+            //string originalText = tbKey5x5.Text;
 
-            if (originalText.Contains(" "))
+            //if (originalText.Contains(" "))
+            //{
+            //    // Loại bỏ tất cả khoảng trắng
+            //    tbKey5x5.Text = originalText.Replace(" ", "");
+
+            //    // Trả lại con trỏ về vị trí cũ (tránh bị nhảy về đầu dòng)
+            //    tbKey5x5.SelectionStart = Math.Max(0, cursorPosition - 1);
+            //}
+            TextBox tb = (TextBox)sender;
+            int cursorPosition = tb.SelectionStart;
+            string originalText = tb.Text;
+            string filteredText = "";
+
+            foreach (char c in originalText)
             {
-                // Loại bỏ tất cả khoảng trắng
-                tbKey5x5.Text = originalText.Replace(" ", "");
-
-                // Trả lại con trỏ về vị trí cũ (tránh bị nhảy về đầu dòng)
-                tbKey5x5.SelectionStart = Math.Max(0, cursorPosition - 1);
+                char upperC = char.ToUpper(c);
+                // Chỉ nhận ký tự chữ cái Tiếng Anh từ A đến Z (Không nhận khoảng trắng, số, ký tự đặc biệt)
+                if (upperC >= 'A' && upperC <= 'Z')
+                {
+                    filteredText += upperC;
+                }
             }
+
+            if (originalText != filteredText)
+            {
+                tb.Text = filteredText;
+                // Tính toán lại vị trí con trỏ để không bị nhảy về đầu dòng
+                tb.SelectionStart = Math.Max(0, cursorPosition - (originalText.Length - filteredText.Length));
+            }
+
         }
 
         private void tbKey6x6_TextChanged(object sender, EventArgs e)
         {
-            int cursorPosition = tbKey6x6.SelectionStart; // Lưu vị trí con trỏ
-            string originalText = tbKey6x6.Text;
+            //int cursorPosition = tbKey6x6.SelectionStart; // Lưu vị trí con trỏ
+            //string originalText = tbKey6x6.Text;
 
-            if (originalText.Contains(" "))
+            //if (originalText.Contains(" "))
+            //{
+            //    // Loại bỏ tất cả khoảng trắng
+            //    tbKey6x6.Text = originalText.Replace(" ", "");
+
+            //    // Trả lại con trỏ về vị trí cũ (tránh bị nhảy về đầu dòng)
+            //    tbKey6x6.SelectionStart = Math.Max(0, cursorPosition - 1);
+            //}
+
+            TextBox tb = (TextBox)sender;
+            int cursorPosition = tb.SelectionStart;
+            string originalText = tb.Text;
+            string filteredText = "";
+
+            foreach (char c in originalText)
             {
-                // Loại bỏ tất cả khoảng trắng
-                tbKey6x6.Text = originalText.Replace(" ", "");
+                char upperC = char.ToUpper(c);
+                // Nhận chữ cái Anh (A-Z) HOẶC ký tự số (0-9)
+                if ((upperC >= 'A' && upperC <= 'Z') || (c >= '0' && c <= '9'))
+                {
+                    filteredText += upperC;
+                }
+            }
 
-                // Trả lại con trỏ về vị trí cũ (tránh bị nhảy về đầu dòng)
-                tbKey6x6.SelectionStart = Math.Max(0, cursorPosition - 1);
+            if (originalText != filteredText)
+            {
+                tb.Text = filteredText;
+                tb.SelectionStart = Math.Max(0, cursorPosition - (originalText.Length - filteredText.Length));
             }
         }
 
@@ -448,6 +507,73 @@ namespace Playfair
         private async void btnResult6_Click(object sender, EventArgs e)
         {
             await ProcessPlayfair(6, tbKey6x6, tbInput6x6, tbOutput6x6, tlpMatrix6x6, cbOption6x6, tbBKey3, tbBKey4, tbPKey3, tbPKey4, state6, btnCal6x6, btnProcessControl6, btnCancel6, true);
+        }
+
+        private void tbInput5x5_TextChanged(object sender, EventArgs e)
+        {
+            RichTextBox rtb = (RichTextBox)sender; // Hoặc TextBox tùy kiểu control bạn dùng
+            int cursorPosition = rtb.SelectionStart;
+            string originalText = rtb.Text;
+            string filteredText = "";
+
+            foreach (char c in originalText)
+            {
+                char upperC = char.ToUpper(c);
+                // Nhận chữ cái Anh (A-Z) HOẶC dấu cách (khoảng trắng)
+                if ((upperC >= 'A' && upperC <= 'Z') || c == ' ')
+                {
+                    filteredText += upperC;
+                }
+            }
+
+            if (originalText != filteredText)
+            {
+                rtb.Text = filteredText;
+                rtb.SelectionStart = Math.Max(0, cursorPosition - (originalText.Length - filteredText.Length));
+            }
+        }
+
+        private void tbInput6x6_TextChanged(object sender, EventArgs e)
+        {
+            RichTextBox rtb = (RichTextBox)sender;
+            int cursorPosition = rtb.SelectionStart;
+            string originalText = rtb.Text;
+            string filteredText = "";
+
+            foreach (char c in originalText)
+            {
+                char upperC = char.ToUpper(c);
+                // Nhận chữ cái (A-Z) HOẶC số (0-9) HOẶC khoảng trắng
+                if ((upperC >= 'A' && upperC <= 'Z') || (c >= '0' && c <= '9') || c == ' ')
+                {
+                    filteredText += upperC;
+                }
+            }
+
+            if (originalText != filteredText)
+            {
+                rtb.Text = filteredText;
+                rtb.SelectionStart = Math.Max(0, cursorPosition - (originalText.Length - filteredText.Length));
+            }
+        }
+
+        private void cbOption5x5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Chỉ kích hoạt nút khi người dùng thực sự chọn một phương thức hợp lệ
+            if (cbOption5x5.SelectedIndex != -1)
+            {
+                btnCal5x5.Enabled = true;
+                btnResult5.Enabled = true;
+            }
+        }
+
+        private void cbOption6x6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbOption6x6.SelectedIndex != -1)
+            {
+                btnCal6x6.Enabled = true;
+                btnResult6.Enabled = true;
+            }
         }
     }
 }

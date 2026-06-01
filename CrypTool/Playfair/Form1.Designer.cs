@@ -211,6 +211,7 @@
             tbInput5x5.Size = new Size(591, 188);
             tbInput5x5.TabIndex = 34;
             tbInput5x5.Text = "";
+            tbInput5x5.TextChanged += tbInput5x5_TextChanged;
             // 
             // cbOption5x5
             // 
@@ -220,6 +221,7 @@
             cbOption5x5.Name = "cbOption5x5";
             cbOption5x5.Size = new Size(114, 28);
             cbOption5x5.TabIndex = 33;
+            cbOption5x5.SelectedIndexChanged += cbOption5x5_SelectedIndexChanged;
             // 
             // tbOutput5x5
             // 
@@ -405,6 +407,7 @@
             cbOption6x6.Name = "cbOption6x6";
             cbOption6x6.Size = new Size(114, 28);
             cbOption6x6.TabIndex = 24;
+            cbOption6x6.SelectedIndexChanged += cbOption6x6_SelectedIndexChanged;
             // 
             // tlpMatrix6x6
             // 
@@ -461,6 +464,7 @@
             tbInput6x6.Size = new Size(591, 188);
             tbInput6x6.TabIndex = 25;
             tbInput6x6.Text = "";
+            tbInput6x6.TextChanged += tbInput6x6_TextChanged;
             // 
             // panel2
             // 
