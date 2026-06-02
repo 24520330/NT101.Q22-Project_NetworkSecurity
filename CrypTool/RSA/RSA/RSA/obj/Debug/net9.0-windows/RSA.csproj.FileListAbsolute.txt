@@ -1,0 +1,17 @@
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.Form1.resources
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.csproj.GenerateResource.cache
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.GeneratedMSBuildEditorConfig.editorconfig
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.AssemblyInfoInputs.cache
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.AssemblyInfo.cs
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.csproj.CoreCompileInputs.cache
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.sourcelink.json
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\bin\Debug\net9.0-windows\RSA.exe
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\bin\Debug\net9.0-windows\RSA.deps.json
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\bin\Debug\net9.0-windows\RSA.runtimeconfig.json
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\bin\Debug\net9.0-windows\RSA.dll
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\bin\Debug\net9.0-windows\RSA.pdb
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.dll
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\refint\RSA.dll
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.pdb
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\RSA.genruntimeconfig.cache
+D:\Daihoc\Nam2\HK2\NT101_antoanmang\Đồ án\NT101.Q22-Project_NetworkSecurity\RSA\RSA\RSA\obj\Debug\net9.0-windows\ref\RSA.dll
