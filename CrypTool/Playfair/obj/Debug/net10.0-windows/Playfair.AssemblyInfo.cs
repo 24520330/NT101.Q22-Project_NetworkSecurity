@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Playfair")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b49669fbe78a9fd487924078ed7378a366f4248")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+162ba0f06f8749f0be8302adcd3b81436e05596a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Playfair")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Playfair")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,11 +2,9 @@ namespace Playfair
 {
     public partial class Form1 : Form
     {
-        // Trạng thái cho Tab 5x5
         private bool isPaused5 = false;
         private bool isRunning5 = false;
 
-        // Trạng thái cho Tab 6x6
         private bool isPaused6 = false;
         private bool isRunning6 = false;
 
@@ -29,16 +27,12 @@ namespace Playfair
             InitMatrixGrid(tlpMatrix5x5, 5);
             InitMatrixGrid(tlpMatrix6x6, 6);
 
-            // --- KHÓA CÁC NÚT KHI MỚI BẮT ĐẦU ---
-            // Tab 5x5
             btnCal5x5.Enabled = false;
             btnResult5.Enabled = false;
 
-            // Tab 6x6
             btnCal6x6.Enabled = false;
             btnResult6.Enabled = false;
 
-            // Đảm bảo ComboBox chưa chọn gì cả (để trống hoặc hiển thị mặc định tùy bạn thiết kế)
             cbOption5x5.SelectedIndex = -1;
             cbOption6x6.SelectedIndex = -1;
 
@@ -46,22 +40,20 @@ namespace Playfair
 
         private void InitMatrixGrid(TableLayoutPanel tlp, int size)
         {
-            tlp.Controls.Clear(); // Xóa các thứ đang có (nếu có)
+            tlp.Controls.Clear(); 
 
             for (int row = 0; row < size; row++)
             {
                 for (int col = 0; col < size; col++)
                 {
                     Label lbl = new Label();
-                    lbl.Name = $"lbl_{row}_{col}"; // Đặt tên theo tọa độ
-                    lbl.Text = "";                 // Sẽ gán ký tự ma trận sau
+                    lbl.Name = $"lbl_{row}_{col}"; 
+                    lbl.Text = "";                 
                     lbl.Dock = DockStyle.Fill;
                     lbl.TextAlign = ContentAlignment.MiddleCenter;
-                    //lbl.BorderStyle = BorderStyle.None; // Thêm khung cho dễ nhìn
-                    lbl.Margin = new Padding(0);   // Khít sát ô
+                    lbl.Margin = new Padding(0);   
                     lbl.Font = new Font("Segoe UI", 12, FontStyle.Bold);
 
-                    // Thêm vào TableLayoutPanel đúng vị trí cột, hàng
                     tlp.Controls.Add(lbl, col, row);
                 }
             }
@@ -75,25 +67,22 @@ namespace Playfair
             tbPKey2.Text = p2;
         }
 
-        // Hàm hiển thị mảng ký tự lên TableLayoutPanel
         private void FillMatrixToGrid(TableLayoutPanel tlp, char[,] matrix, int size)
         {
             for (int r = 0; r < size; r++)
             {
                 for (int c = 0; c < size; c++)
                 {
-                    // Tìm đúng Label theo tên đã đặt lúc Init
                     Control ctrl = tlp.Controls.Find($"lbl_{r}_{c}", true).FirstOrDefault();
                     if (ctrl is Label lbl)
                     {
                         lbl.Text = matrix[r, c].ToString();
-                        lbl.BackColor = Color.Transparent; // Reset màu về mặc định
+                        lbl.BackColor = Color.Transparent; 
                     }
                 }
             }
         }
 
-        // Hàm tô màu một ô cụ thể
         private void HighlightCell(TableLayoutPanel tlp, int row, int col, Color color)
         {
             Control ctrl = tlp.Controls.Find($"lbl_{row}_{col}", true).FirstOrDefault();
@@ -105,37 +94,17 @@ namespace Playfair
 
         private char[,] GenerateMatrix(string key, int size)
         {
-            /*string alphabet = (size == 5) ? "ABCDEFGHIKLMNOPQRSTUVWXYZ" : "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            key = key.ToUpper().Replace("J", "I"); // Playfair 5x5 thường gộp I/J
-
-            string combined = key + alphabet;
-            string distinctKey = "";
-
-            // Lấy các ký tự duy nhất
-            foreach (char c in combined)
-            {
-                if (!distinctKey.Contains(c)) distinctKey += c;
-            }
-
-            char[,] matrix = new char[size, size];
-            for (int i = 0; i < size * size; i++)
-            {
-                matrix[i / size, i % size] = distinctKey[i];
-            }
-            return matrix;*/
             string alphabet = "";
-            //key = key.ToUpper();
             key = key.Replace(" ", "").ToUpper();
 
             if (size == 5)
             {
-                alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"; // Không có J
+                alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"; 
                 key = key.Replace("J", "I");
             }
-            else // size == 6
+            else 
             {
                 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-                // 6x6 không cần gộp J thành I, giữ nguyên cả hai
             }
 
             string combined = key + alphabet;
@@ -156,64 +125,9 @@ namespace Playfair
 
         private List<string> SplitIntoPairs(string text, int size)
         {
-            /*text = text.ToUpper().Replace("J", "I").Replace(" ", "");
-            List<string> pairs = new List<string>();
-
-            for (int i = 0; i < text.Length; i += 2)
-            {
-                if (i == text.Length - 1)
-                {
-                    pairs.Add(text[i] + "X");
-                }
-                else if (text[i] == text[i + 1])
-                {
-                    pairs.Add(text[i] + "X");
-                    i--; // Lùi lại để ký tự bị trùng lặp kết hợp với chữ tiếp theo
-                }
-                else
-                {
-                    pairs.Add(text[i].ToString() + text[i + 1].ToString());
-                }
-            }
-            return pairs;*/
-
-            // 1. Lọc dữ liệu: Chỉ giữ lại ký tự hợp lệ
-            /*string validChars = "";
-            text = text.ToUpper().Replace("J", "I"); // Chuẩn hóa I/J cho Playfair
-
-            foreach (char c in text)
-            {
-                if (size == 5)
-                {
-                    // Chỉ lấy chữ cái A-Z
-                    if (c >= 'A' && c <= 'Z') validChars += c;
-                }
-                else // size == 6
-                {
-                    // Lấy chữ cái A-Z và số 0-9
-                    if ((c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')) validChars += c;
-                }
-            }
-
-            // 2. Chia cặp trên chuỗi đã lọc (giữ nguyên logic cũ của bạn)
-            List<string> pairs = new List<string>();
-            for (int i = 0; i < validChars.Length; i += 2)
-            {
-                if (i == validChars.Length - 1)
-                    pairs.Add(validChars[i] + "X");
-                else if (validChars[i] == validChars[i + 1])
-                {
-                    pairs.Add(validChars[i] + "X");
-                    i--;
-                }
-                else
-                    pairs.Add(validChars[i].ToString() + validChars[i + 1].ToString());
-            }
-            return pairs;*/
             text = text.ToUpper();
             if (size == 5) text = text.Replace("J", "I");
 
-            // Lọc ký tự hợp lệ
             string validChars = "";
             foreach (char c in text)
             {
@@ -252,19 +166,16 @@ namespace Playfair
             int r1 = p1.R, c1 = p1.C, r2 = p2.R, c2 = p2.C;
             int offset = isEncrypt ? 1 : -1;
 
-            // Trường hợp 1: Cùng hàng -> Dịch ngang
             if (r1 == r2)
             {
                 c1 = (c1 + offset + size) % size;
                 c2 = (c2 + offset + size) % size;
             }
-            // Trường hợp 2: Cùng cột -> Dịch dọc
             else if (c1 == c2)
             {
                 r1 = (r1 + offset + size) % size;
                 r2 = (r2 + offset + size) % size;
             }
-            // Trường hợp 3: Hình chữ nhật -> Tráo góc
             else
             {
                 int tempC1 = c1;
@@ -277,9 +188,8 @@ namespace Playfair
 
         private async Task ProcessPlayfair(int size, TextBox txtKey, RichTextBox rtbInput, RichTextBox rtbOutput,
             TableLayoutPanel tlp, ComboBox cbOption, TextBox b1, TextBox b2, TextBox p1, TextBox p2, PlayfairState state,
-            /*Button btn,*/ Button btnCal, Button btnControl, Button btnStop, bool isFast = false)
+            Button btnCal, Button btnControl, Button btnStop, bool isFast = false)
         {
-            // Khởi tạo trạng thái
             state.IsRunning = true;
             state.IsPaused = false;
             state.RequestStop = false;
@@ -291,7 +201,6 @@ namespace Playfair
             char[,] matrix = GenerateMatrix(txtKey.Text, size);
             FillMatrixToGrid(tlp, matrix, size);
 
-            // CHỈ bật các nút điều khiển nếu KHÔNG PHẢI chế độ nhanh
             if (!isFast)
             {
                 btnControl.Enabled = true;
@@ -300,18 +209,15 @@ namespace Playfair
             }
             else
             {
-                // Chế độ nhanh thì khóa chặt các nút này
                 btnControl.Enabled = false;
                 btnStop.Enabled = false;
             }
 
             List<string> pairs = SplitIntoPairs(rtbInput.Text, size);
             bool isEncrypt = (cbOption.SelectedIndex == 0);
-            //rtbOutput.Clear();
 
             foreach (string pair in pairs)
             {
-                // Kiểm tra nếu người dùng bấm Hủy
                 if (state.RequestStop) break;
 
                 var pos1 = FindPos(matrix, pair[0], size);
@@ -326,16 +232,13 @@ namespace Playfair
                 }
                 else
                 {
-                    //CƠ CHẾ TẠM DỪNG 
                     while (state.IsPaused)
                     {
                         await Task.Delay(100);
-                        // Kiểm tra nếu người dùng bấm Hủy
                         if (state.RequestStop) break;
-                    }// Thoát nếu bị hủy
+                    }
                     if (state.RequestStop) break;
 
-                    // Highlight, cập nhật UI Before
                     HighlightCell(tlp, pos1.R, pos1.C, Color.Yellow);
                     HighlightCell(tlp, pos2.R, pos2.C, Color.Yellow);
                     b1.Text = pair[0].ToString(); b2.Text = pair[1].ToString();
@@ -350,14 +253,12 @@ namespace Playfair
 
                     await Task.Delay(400);
 
-                    // Reset màu ô vừa xử lý
                     HighlightCell(tlp, pos1.R, pos1.C, Color.Transparent);
                     HighlightCell(tlp, pos2.R, pos2.C, Color.Transparent);
                     HighlightCell(tlp, res.R1, res.C1, Color.Transparent);
                     HighlightCell(tlp, res.R2, res.C2, Color.Transparent);
                 }
             }
-            // Kết thúc tiến trình
             state.IsRunning = false;
             btnControl.Enabled = false;
             btnStop.Enabled = false;
@@ -378,17 +279,6 @@ namespace Playfair
 
         private void tbKey5x5_TextChanged(object sender, EventArgs e)
         {
-            //int cursorPosition = tbKey5x5.SelectionStart; // Lưu vị trí con trỏ
-            //string originalText = tbKey5x5.Text;
-
-            //if (originalText.Contains(" "))
-            //{
-            //    // Loại bỏ tất cả khoảng trắng
-            //    tbKey5x5.Text = originalText.Replace(" ", "");
-
-            //    // Trả lại con trỏ về vị trí cũ (tránh bị nhảy về đầu dòng)
-            //    tbKey5x5.SelectionStart = Math.Max(0, cursorPosition - 1);
-            //}
             TextBox tb = (TextBox)sender;
             int cursorPosition = tb.SelectionStart;
             string originalText = tb.Text;
@@ -397,7 +287,6 @@ namespace Playfair
             foreach (char c in originalText)
             {
                 char upperC = char.ToUpper(c);
-                // Chỉ nhận ký tự chữ cái Tiếng Anh từ A đến Z (Không nhận khoảng trắng, số, ký tự đặc biệt)
                 if (upperC >= 'A' && upperC <= 'Z')
                 {
                     filteredText += upperC;
@@ -407,7 +296,6 @@ namespace Playfair
             if (originalText != filteredText)
             {
                 tb.Text = filteredText;
-                // Tính toán lại vị trí con trỏ để không bị nhảy về đầu dòng
                 tb.SelectionStart = Math.Max(0, cursorPosition - (originalText.Length - filteredText.Length));
             }
 
@@ -415,18 +303,6 @@ namespace Playfair
 
         private void tbKey6x6_TextChanged(object sender, EventArgs e)
         {
-            //int cursorPosition = tbKey6x6.SelectionStart; // Lưu vị trí con trỏ
-            //string originalText = tbKey6x6.Text;
-
-            //if (originalText.Contains(" "))
-            //{
-            //    // Loại bỏ tất cả khoảng trắng
-            //    tbKey6x6.Text = originalText.Replace(" ", "");
-
-            //    // Trả lại con trỏ về vị trí cũ (tránh bị nhảy về đầu dòng)
-            //    tbKey6x6.SelectionStart = Math.Max(0, cursorPosition - 1);
-            //}
-
             TextBox tb = (TextBox)sender;
             int cursorPosition = tb.SelectionStart;
             string originalText = tb.Text;
@@ -435,7 +311,6 @@ namespace Playfair
             foreach (char c in originalText)
             {
                 char upperC = char.ToUpper(c);
-                // Nhận chữ cái Anh (A-Z) HOẶC ký tự số (0-9)
                 if ((upperC >= 'A' && upperC <= 'Z') || (c >= '0' && c <= '9'))
                 {
                     filteredText += upperC;
@@ -451,17 +326,17 @@ namespace Playfair
 
         private void btnProcessControl5_Click(object sender, EventArgs e)
         {
-            if (!state5.IsRunning) return; // Chỉ có tác dụng khi đang chạy mã hóa
+            if (!state5.IsRunning) return; 
 
-            state5.IsPaused = !state5.IsPaused; // Đảo trạng thái
+            state5.IsPaused = !state5.IsPaused; 
             btnProcessControl5.Text = state5.IsPaused ? "Tiếp tục" : "Tạm dừng";
         }
 
         private void btnProcessControl6_Click(object sender, EventArgs e)
         {
-            if (!state6.IsRunning) return; // Chỉ có tác dụng khi đang chạy mã hóa
+            if (!state6.IsRunning) return; 
 
-            state6.IsPaused = !state6.IsPaused; // Đảo trạng thái
+            state6.IsPaused = !state6.IsPaused; 
             btnProcessControl6.Text = state6.IsPaused ? "Tiếp tục" : "Tạm dừng";
         }
 
@@ -470,12 +345,10 @@ namespace Playfair
             if (state5.IsRunning)
             {
                 state5.RequestStop = true;
-                state5.IsPaused = false; // Giải phóng nếu đang ở trạng thái tạm dừng
+                state5.IsPaused = false; 
 
-                // Xóa toàn bộ nội dung ô Output khi hủy
                 tbOutput5x5.Clear();
 
-                // Có thể xóa thêm các ô phụ nếu muốn hoàn toàn "sạch"
                 tbBKey1.Clear();
                 tbBKey2.Clear();
                 tbPKey1.Clear();
@@ -511,7 +384,7 @@ namespace Playfair
 
         private void tbInput5x5_TextChanged(object sender, EventArgs e)
         {
-            RichTextBox rtb = (RichTextBox)sender; // Hoặc TextBox tùy kiểu control bạn dùng
+            RichTextBox rtb = (RichTextBox)sender; 
             int cursorPosition = rtb.SelectionStart;
             string originalText = rtb.Text;
             string filteredText = "";
@@ -519,7 +392,6 @@ namespace Playfair
             foreach (char c in originalText)
             {
                 char upperC = char.ToUpper(c);
-                // Nhận chữ cái Anh (A-Z) HOẶC dấu cách (khoảng trắng)
                 if ((upperC >= 'A' && upperC <= 'Z') || c == ' ')
                 {
                     filteredText += upperC;
@@ -543,7 +415,6 @@ namespace Playfair
             foreach (char c in originalText)
             {
                 char upperC = char.ToUpper(c);
-                // Nhận chữ cái (A-Z) HOẶC số (0-9) HOẶC khoảng trắng
                 if ((upperC >= 'A' && upperC <= 'Z') || (c >= '0' && c <= '9') || c == ' ')
                 {
                     filteredText += upperC;
@@ -559,7 +430,6 @@ namespace Playfair
 
         private void cbOption5x5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Chỉ kích hoạt nút khi người dùng thực sự chọn một phương thức hợp lệ
             if (cbOption5x5.SelectedIndex != -1)
             {
                 btnCal5x5.Enabled = true;
