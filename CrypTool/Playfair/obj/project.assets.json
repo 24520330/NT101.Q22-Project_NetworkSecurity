@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ATMMT-PlayFair\\Playfair\\Playfair\\Playfair.csproj",
+      "projectUniqueName": "D:\\162026\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\Playfair\\Playfair.csproj",
       "projectName": "Playfair",
-      "projectPath": "D:\\ATMMT-PlayFair\\Playfair\\Playfair\\Playfair.csproj",
+      "projectPath": "D:\\162026\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\Playfair\\Playfair.csproj",
       "packagesPath": "C:\\Users\\HUNG PHAT\\.nuget\\packages\\",
-      "outputPath": "D:\\ATMMT-PlayFair\\Playfair\\Playfair\\obj\\",
+      "outputPath": "D:\\162026\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\Playfair\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HUNG PHAT\\AppData\\Roaming\\NuGet\\NuGet.Config",
