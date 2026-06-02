@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\Đồ án\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\RSA\\RSA.csproj",
+      "projectUniqueName": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\Đồ án\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\RSA\\RSA.csproj",
       "projectName": "RSA",
-      "projectPath": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\Đồ án\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\RSA\\RSA.csproj",
+      "projectPath": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\Đồ án\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\RSA\\RSA.csproj",
       "packagesPath": "C:\\Users\\dohoa\\.nuget\\packages\\",
-      "outputPath": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\Đồ án\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\RSA\\obj\\",
+      "outputPath": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\Đồ án\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\RSA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\",
+  "WorkspaceRootPath": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|d:\\daihoc\\nam2\\hk2\\nt101_antoanmang\\\u0111\u1ED3 \u00E1n\\nt101.q22-project_networksecurity\\rsa\\rsa\\rsa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|solutionrelative:rsa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|d:\\daihoc\\nam2\\hk2\\nt101_antoanmang\\\u0111\u1ED3 \u00E1n\\nt101.q22-project_networksecurity\\cryptool\\rsa\\rsa\\rsacore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|solutionrelative:rsa\\rsacore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|d:\\daihoc\\nam2\\hk2\\nt101_antoanmang\\\u0111\u1ED3 \u00E1n\\nt101.q22-project_networksecurity\\rsa\\rsa\\rsa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|d:\\daihoc\\nam2\\hk2\\nt101_antoanmang\\\u0111\u1ED3 \u00E1n\\nt101.q22-project_networksecurity\\cryptool\\rsa\\rsa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|solutionrelative:rsa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|d:\\daihoc\\nam2\\hk2\\nt101_antoanmang\\\u0111\u1ED3 \u00E1n\\nt101.q22-project_networksecurity\\rsa\\rsa\\rsa\\rsacore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|solutionrelative:rsa\\rsacore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\rsa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0EBE72C9-DD3E-4EDE-905F-C4C0C5C943BE}|RSA\\RSA.csproj|solutionrelative:rsa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,39 +22,39 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "RSACore.cs",
-              "DocumentMoniker": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\RSA\\RSACore.cs",
+              "DocumentMoniker": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\RSA\\RSACore.cs",
               "RelativeDocumentMoniker": "RSA\\RSACore.cs",
-              "ToolTip": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\RSA\\RSACore.cs",
+              "ToolTip": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\RSA\\RSACore.cs",
               "RelativeToolTip": "RSA\\RSACore.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAcwGEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAcwE8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T17:29:46.947Z"
+              "WhenOpened": "2026-06-01T17:29:46.947Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\RSA\\Form1.cs",
+              "DocumentMoniker": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\RSA\\Form1.cs",
               "RelativeDocumentMoniker": "RSA\\Form1.cs",
-              "ToolTip": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\RSA\\Form1.cs [Design]",
+              "ToolTip": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\RSA\\Form1.cs [Design]",
               "RelativeToolTip": "RSA\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T17:17:26.872Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-06-01T17:17:26.872Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\RSA\\Form1.cs",
+              "DocumentMoniker": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\RSA\\Form1.cs",
               "RelativeDocumentMoniker": "RSA\\Form1.cs",
-              "ToolTip": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\RSA\\RSA\\RSA\\Form1.cs",
+              "ToolTip": "D:\\Daihoc\\Nam2\\HK2\\NT101_antoanmang\\\u0110\u1ED3 \u00E1n\\NT101.Q22-Project_NetworkSecurity\\CrypTool\\RSA\\RSA\\Form1.cs",
               "RelativeToolTip": "RSA\\Form1.cs",
               "ViewState": "AgIAAEUAAAAAAAAAAAAIwHkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
